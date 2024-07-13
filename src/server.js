@@ -5,6 +5,8 @@ import { scrapeProducts } from './scraper.js';
 import { buscadorAleatorioPalabra, getDate } from './functions.js'
 import ExcelJS from 'exceljs';
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,7 +22,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/products', async (req, res) => {
-    const search = req.query.search
+    const search = req.query.search 
     try {
         const products = await scrapeProducts(search);
         res.render('pages/products', { search, products, pagetitle: 'products'});
@@ -81,6 +83,6 @@ app.get('/download/:search', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000');
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
