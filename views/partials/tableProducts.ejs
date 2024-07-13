@@ -1,0 +1,23 @@
+<a href="/download/<%= search %>"><button>Descargar excel</button></a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th class="price">Precio</th>
+            <th class="href">Enlace</th>
+            <th class="src">Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% products.forEach(product => { %> 
+            <tr>
+                <td><%= product.Producto.Id %></td>
+                <td><%= product.Producto.Titulo %></td>
+                <td><%= product.Producto.Signo %><%= product.Producto.Precio %></td>
+                <td class="itemVerProducto"><a href="<%= product.Producto.Href %>">Ver Producto</a></td>
+                <td class="itemImage"><img src="<%= product.Producto.Imagen %>" alt="<%= product.Producto.Titulo %>"></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
