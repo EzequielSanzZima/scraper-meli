@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Productos: <%= search %></title>
-    <%- include('../partials/linksHead'); %>
+<title>Lista de Productos: <%= search %></title>
+<%- include('../partials/linksHead'); %>
 <body>
     <header>
         <%- include('../partials/header'); %>
     </header>
-    <h1 class="font-italic text-center">Busqueda de 
-        <span class="text-uppercase "><ins><%= search %></ins></span>
+    <h1 class="text-center mt-5">
+        Búsqueda de 
+        <span class="text-uppercase" style="color: #007bff;"><ins><%= search %></ins></span>
     </h1>
-    <%- include('../partials/tableProducts'); %>
+
+    <% if (view === 'table') { %>
+        <%- include('../partials/tableProducts', { products: products }); %>
+    <% } else if (view === 'card') { %>
+        <%- include('../partials/cardProducts', { products: products }); %>
+    <% } %>
 </body>
 <%- include('../partials/scripts'); %>
-</html>
+

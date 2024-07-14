@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <a href="/download/<%= search %>" class="btn btn-primary">Descargar Excel</a>
+    </div>
+    <div class="col text-end">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="/products?view=table&search=<%= search %>" class="btn btn-outline-secondary">
+            <i class="bi bi-table"></i> Vista en Tabla
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="/products?view=card&search=<%= search %>" class="btn btn-outline-secondary">
+            <i class="bi bi-grid"></i> Vista en Cartas
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-3">
+    <% products.forEach(product => { %>
+      <div class="col">
+        <div class="card h-100 shadow-sm product-card">
+          <img src="<%= product.Producto.Imagen %>" class="card-img-top img-fluid pt-1" alt="<%= product.Producto.Titulo %>" style="object-fit: contain; max-height: 200px;">
+          <div class="card-body d-flex flex-column">
+            <div class="mb-auto">
+              <span class="badge rounded-pill bg-primary"><%= product.Producto.Puntaje %></span>
+              <span class="float-end price-hp">
+                <%= product.Producto.Signo %><%= product.Producto.Precio %>
+              </span>
+            </div>
+            <h5 class="card-title mt-3 mb-3">
+              <%= product.Producto.Titulo %>
+            </h5>
+            <div class="text-center mt-auto">
+              <a href="<%= product.Producto.Href %>" class="btn btn-warning">Ver Producto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>

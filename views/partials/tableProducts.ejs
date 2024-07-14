@@ -1,5 +1,25 @@
-<a href="/download/<%= search %>"><button>Descargar excel</button></a>
-<table>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <a href="/download/<%= search %>" class="btn btn-primary">Descargar Excel</a>
+      </div>
+      <div class="col text-end">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="/products?view=table&search=<%= search %>" class="btn btn-outline-secondary">
+              <i class="bi bi-table"></i> Vista en Tabla
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="/products?view=card&search=<%= search %>" class="btn btn-outline-secondary">
+              <i class="bi bi-grid"></i> Vista en Cartas
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<table class="container pb-5">
     <thead>
         <tr>
             <th>ID</th>

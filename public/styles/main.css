@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: Arial, sans-serif;
 }
@@ -29,6 +30,16 @@ img {
 
 .active {
   text-decoration: underline !important;
+}
+
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* Para evitar que las imágenes sobresalgan del contenedor */
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=main.css.map */

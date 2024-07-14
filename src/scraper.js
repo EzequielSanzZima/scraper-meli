@@ -15,6 +15,7 @@ async function fetchProducts(url) {
         const signo = signoElement.length ? signoElement.text().trim() : '';
         const imageElement = $(element).find('img.ui-search-result-image__element');
         const image = imageElement.attr('data-src') || imageElement.attr('src');
+        const points = $(element).find('.andes-visually-hidden').text()
         const id = index + 1;
 
         if (title && price && href && image) {
@@ -25,7 +26,8 @@ async function fetchProducts(url) {
                     Precio: price,
                     Href: href,
                     Signo: signo,
-                    Imagen: image
+                    Imagen: image,
+                    Puntaje: points
                 }
             });
         }

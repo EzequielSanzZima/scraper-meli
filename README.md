@@ -2,7 +2,7 @@
 
 Este proyecto es un buscador de productos en MercadoLibre que extrae información relevante como el precio, título, moneda (dólares o pesos) e imagen del producto.
 
-## [Demo](https://a5bd3124-e97c-4dff-8289-f2de0b28de6b-00-1bk5l8gixapdy.riker.replit.dev/)
+## [Demo](https://scraper-meli-git-main-ezequielsanzzimas-projects.vercel.app/)
 
 ## Instalar
 
@@ -22,6 +22,7 @@ Las depencias que fueron utilizadas:
 - Ejs
 - Exceljs
 - Express
+- Express-session
 - Nodemon
 - Npm-run-all
 - Sass

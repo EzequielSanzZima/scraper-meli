@@ -1,3 +1,6 @@
+import crypto from 'crypto';
+import session from 'express-session';
+
 const frases = [
     "sol", "mar", "luz", "café", "libro", "flor", "nieve", "cielo", "fuego", "lluvia",
     "roca", "viento", "bosque", "río", "lago", "arena", "planta", "pez", "fruta", "vino",
@@ -51,3 +54,14 @@ export function getDate (mode, userdate) {
         default: return dte;
     }
 }
+
+//cookie
+
+const secret = crypto.randomBytes(64).toString('hex');
+export function cookieForProducts(app){
+    app.use(session({
+    secret: secret,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Cambia a true si usas HTTPS
+}))};
