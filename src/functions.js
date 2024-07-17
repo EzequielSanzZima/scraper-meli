@@ -63,5 +63,5 @@ export function cookieForProducts(app){
     secret: secret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Cambia a true si usas HTTPS
+    cookie: { secure: false }
 }))};
